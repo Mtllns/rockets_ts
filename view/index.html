@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>ROCKETS JS</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row mt-5">
+              <!-- ROCKET1 -->
+                <div class="col text-center">
+                    <div class="rocket mt-5">
+                        <div class="rocket-body d-none" id="rocket-body">
+                          <div class="body"></div>
+                          <div class="fin fin-left"></div>
+                          <div class="fin fin-right"></div>
+                          <div class="window"></div>
+                        </div>
+                        <div class="exhaust-flame d-none" id="exhaust-flame"></div>
+                        <ul class="exhaust-fumes d-none" id="exhaust-fumes">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <ul class="star">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="rocket1">
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" onclick="createRocket1()"> Create <i class="fas fa-plus"></i>
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2"> Accelerate <i class="fas fa-arrow-up"></i>
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3"> Break <i class="fas fa-arrow-down"></i>
+                      </label>
+                    </div>
+                    <div id="rocket_1" class="d-none">
+                      <p class="text-center h5 pt-2" id="32WESSDS"></p>
+                    </div>
+                </div>
+                <!-- ROCKET 2 -->
+                <div class="col text-center">
+                    <div class="rocket mt-5">
+                        <div class="rocket-body d-none" id="rocket-body2">
+                          <div class="body"></div>
+                          <div class="fin fin-left"></div>
+                          <div class="fin fin-right"></div>
+                          <div class="window"></div>
+                        </div>
+                        <div class="exhaust-flame d-none" id="exhaust-flame2"></div>
+                        <ul class="exhaust-fumes d-none" id="exhaust-fumes2">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <ul class="star">
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons" id="rocket2">
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" onclick="createRocket2()"> Create <i class="fas fa-plus"></i>
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2"> Accelerate <i class="fas fa-arrow-up"></i>
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option3"> Break <i class="fas fa-arrow-down"></i>
+                      </label>
+                    </div>
+                    <div id="LDSFJA32" class="d-none">
+                      <p class="text-center h4" id="LDSFJA32"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+    <script src="/controllers/controller.js"></script>
+    <script src="/model/rocket.js"></script>
+    <script src="/model/thruster.js"></script>
+    </body>
+</html>
