@@ -4,14 +4,11 @@ class Rocket {
     currentPower:number;
     thrusters:Thruster[]=new Array();
 
-    constructor(code:string, currentPower:number) {
+    constructor(code:string) {
         this.code = code;
-        this.currentPower = currentPower;
+        this.currentPower = 0;
 
     }
-
-
-
     addThruster(thruster:Thruster){
         this.thrusters.push(thruster);
     }
