@@ -1,9 +1,9 @@
 "use strict";
 var Thruster = /** @class */ (function () {
-    // public numThrusters:number;
     function Thruster(maxPower) {
+        this.maxPower = 0;
         this.maxPower = maxPower;
-        // this.numThrusters = maxPower.length;
+        this.currentPower = 0;
     }
     return Thruster;
 }());

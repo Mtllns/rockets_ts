@@ -1,9 +1,9 @@
 class  Thruster{
-    public maxPower:number[];
-    // public numThrusters:number;
+    public maxPower:number = 0;
+    public currentPower:number;
 
-    constructor(maxPower:number[]) {
+    constructor(maxPower:number) {
         this.maxPower = maxPower;
-        // this.numThrusters = maxPower.length;
+        this.currentPower = 0;
     }
 }
