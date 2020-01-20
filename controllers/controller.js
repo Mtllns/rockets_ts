@@ -1,33 +1,40 @@
 "use strict";
-var rocket1;
-var thruster;
-function createRocket1() {
-    var code1 = document.getElementById('rocket_1');
+var rocket;
+var rocket1 = new Rocket("32WESSDS", 3);
+var rocket2 = new Rocket("LDSFJA32", 6);
+function createRocket() {
+    // crea thrusters en rocket1
+    rocket1.addThruster(new Thruster(10));
+    rocket1.addThruster(new Thruster(30));
+    rocket1.addThruster(new Thruster(80));
+    // crea thrusters en rocket2
+    rocket2.addThruster(new Thruster(30));
+    rocket2.addThruster(new Thruster(40));
+    rocket2.addThruster(new Thruster(50));
+    rocket2.addThruster(new Thruster(50));
+    rocket2.addThruster(new Thruster(30));
+    rocket2.addThruster(new Thruster(10));
+    var valorThrusters1 = "";
+    var valorThrusters2 = "";
+    for (var i = 0; i < rocket1.thrusters.length; i++) {
+        valorThrusters1 += rocket1.thrusters[i].maxPower.toString();
+    }
+    for (var i = 0; i < rocket2.thrusters.length; i++) {
+        valorThrusters2 += rocket2.thrusters[i].maxPower.toString();
+    }
+    var rocketsInfo = document.getElementById("infoRockets");
+    // asigna id de html a variables
+    var code1 = document.getElementById('rockets');
     var rocketBody = document.getElementById('rocket-body');
     var exhaustFlame = document.getElementById('exhaust-flame');
     var exhaustFumes = document.getElementById('exhaust-fumes');
-    // elimina clase css
+    // elimina clase css de las id asignadas a las variables
     code1.classList.remove('d-none');
     rocketBody.classList.remove('d-none');
     exhaustFlame.classList.remove('d-none');
     exhaustFumes.classList.remove('d-none');
-    // Crea rocket y añade 3 thrusters
-    rocket1 = new Rocket('32WESSDS');
-    rocket1.addThruster(new Thruster(10));
-    rocket1.addThruster(new Thruster(30));
-    rocket1.addThruster(new Thruster(80));
-    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.currentPower + '<br> Propulsores: ' + rocket1.thrusters.length;
+    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
 }
 function accelerate() {
-    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.currentPower + '<br> Propulsores: ' + rocket1.thrusters.length;
+    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
 }
-// function createRocket2() {
-//     let rocketBody:HTMLElement   = <HTMLElement>document.getElementById('rocket-body2');
-//     let exhaustFlame:HTMLElement = <HTMLElement>document.getElementById('exhaust-flame2');
-//     let exhaustFumes:HTMLElement = <HTMLElement>document.getElementById('exhaust-fumes2');
-//     let code2:HTMLElement        = <HTMLElement>document.getElementById('LDSFJA32');
-//     code2.classList.remove('d-none');
-//     rocketBody.classList.remove('d-none');
-//     exhaustFlame.classList.remove('d-none');
-//     exhaustFumes.classList.remove('d-none');
-// }

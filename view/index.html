@@ -45,7 +45,7 @@
                     </div>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons" id="rocket1">
                       <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option1" onclick="createRocket1()"> Create <i class="fas fa-plus"></i>
+                        <input type="radio" name="options" id="option1" onclick="createRocket()"> Create <i class="fas fa-plus"></i>
                       </label>
                       <label class="btn btn-secondary">
                         <input type="radio" name="options" id="option2" onclick="accelerate1()"> Accelerate <i class="fas fa-arrow-up"></i>
@@ -54,8 +54,8 @@
                         <input type="radio" name="options" id="option3" onclick="break1()"> Break <i class="fas fa-arrow-down"></i>
                       </label>
                     </div>
-                    <div id="rocket_1" class="d-none">
-                      <p class="text-center h5 pt-2" id="32WESSDS"></p>
+                    <div id="rockets" class="d-none">
+                      <p class="text-center h5 pt-2" id="infoRockets"></p>
                     </div>
                 </div>
                 <!-- ROCKET 2 -->
@@ -108,8 +108,8 @@
             </div>
         </div>
         
-    <script src="/controllers/controller.js"></script>
     <script src="/model/rocket.js"></script>
     <script src="/model/thruster.js"></script>
+    <script src="/controllers/controller.js"></script>
     </body>
 </html>
