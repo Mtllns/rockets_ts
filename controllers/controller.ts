@@ -19,15 +19,15 @@ function createRocket() {
     rocket2.addThruster(new Thruster(30));
     rocket2.addThruster(new Thruster(10));
 
-    let valorThrusters1 = "";
-    let valorThrusters2 = "";
+    let valorThrusters1:number[] = [];
+    let valorThrusters2:number[] = [];
 
     for (var i = 0; i < rocket1.thrusters.length; i++) {
-		valorThrusters1 += rocket1.thrusters[i].maxPower.toString();
+		valorThrusters1.push(rocket1.thrusters[i].maxPower);
 	}
 
     for (var i = 0; i < rocket2.thrusters.length; i++) {
-		valorThrusters2 += rocket2.thrusters[i].maxPower.toString();
+		valorThrusters2.push(rocket2.thrusters[i].maxPower);
     }
     
     let rocketsInfo = document.getElementById("infoRockets");
@@ -46,12 +46,16 @@ function createRocket() {
     exhaustFumes.classList.remove('d-none');
 
 
-    (<HTMLElement>document.getElementById('32WESSDS')).innerHTML = rocket1.code +'<br>'+' Current Power: '+ rocket1.speed + '<br> Propulsores: ' +rocket1.thrusters.length;
+    (<HTMLElement>document.getElementById('infoRockets')).innerHTML = rocket1.code +'<br>'+' Current Power: '+ rocket1.speed + '<br> Propulsores: ' +rocket1.thrusters.length;
+    // remover atributo onclick en boton create para que no se pueda volver a crear un rocket despues del 1º
+    (<HTMLElement>document.getElementById("create")).removeAttribute("onclick");
 }
 
 function accelerate() {
 
-    (<HTMLElement>document.getElementById('32WESSDS')).innerHTML = rocket1.code +'<br>'+' Current Power: '+ rocket1.speed + '<br> Propulsores: ' +rocket1.thrusters.length;
+    
+
+    (<HTMLElement>document.getElementById('infoRockets')).innerHTML = rocket1.code +'<br>'+' Current Power: '+ rocket1.speed + '<br> Propulsores: ' +rocket1.thrusters.length;
 }
 
 

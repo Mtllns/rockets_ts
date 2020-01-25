@@ -14,13 +14,13 @@ function createRocket() {
     rocket2.addThruster(new Thruster(50));
     rocket2.addThruster(new Thruster(30));
     rocket2.addThruster(new Thruster(10));
-    var valorThrusters1 = "";
-    var valorThrusters2 = "";
+    var valorThrusters1 = [];
+    var valorThrusters2 = [];
     for (var i = 0; i < rocket1.thrusters.length; i++) {
-        valorThrusters1 += rocket1.thrusters[i].maxPower.toString();
+        valorThrusters1.push(rocket1.thrusters[i].maxPower);
     }
     for (var i = 0; i < rocket2.thrusters.length; i++) {
-        valorThrusters2 += rocket2.thrusters[i].maxPower.toString();
+        valorThrusters2.push(rocket2.thrusters[i].maxPower);
     }
     var rocketsInfo = document.getElementById("infoRockets");
     // asigna id de html a variables
@@ -33,8 +33,10 @@ function createRocket() {
     rocketBody.classList.remove('d-none');
     exhaustFlame.classList.remove('d-none');
     exhaustFumes.classList.remove('d-none');
-    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
+    document.getElementById('infoRockets').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
+    // remover atributo onclick en boton create para que no se pueda volver a crear un rocket despues del 1º
+    document.getElementById("create").removeAttribute("onclick");
 }
 function accelerate() {
-    document.getElementById('32WESSDS').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
+    document.getElementById('infoRockets').innerHTML = rocket1.code + '<br>' + ' Current Power: ' + rocket1.speed + '<br> Propulsores: ' + rocket1.thrusters.length;
 }
